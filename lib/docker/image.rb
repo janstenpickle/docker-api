@@ -34,19 +34,22 @@ class Docker::Image
 
   # Push the Image to the Docker registry.
   def push(creds = nil, options = {})
-    repository = self.info['Repository']
-    unless repository
+    repo_tags = self.info['RepoTags']
+    repositories = repo_tags.map { | item | item.split(':').first }.uniq
+    unless repositories
       raise ArgumentError
-        "Image does not have a name to push, got: #{repository}."
+        "Image does not have a name to push."
     end
 
     credentials = (creds.nil?) ? Docker.creds : creds.to_json
     headers = Docker::Util.build_auth_header(credentials)
-    connection.post(
-      "/images/#{repository}/push",
-      options,
-      :headers => headers
-    )
+    repositories.each do | repository |
+      connection.post(
+        "/images/#{repository}/push",
+        options,
+        :headers => headers
+      )
+    end
     self
   end
 
@@ -216,7 +219,7 @@ class Docker::Image
   def self.response_block_for_build(body)
     lambda do |chunk, remaining, total|
       body << chunk
-      yield chunk if block_given?
+      yield JSON.parse(chunk) if block_given?
     end
   end
 end
