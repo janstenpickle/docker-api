@@ -63,7 +63,7 @@ describe Docker do
     let(:version) { subject.version }
     it 'returns the version as a Hash', :vcr do
       version.should be_a Hash
-      version.keys.sort.should == %w[GitCommit GoVersion Version]
+      version.keys.sort.should == %w[Arch GitCommit GoVersion KernelVersion Os Version]
     end
   end
 
@@ -75,9 +75,10 @@ describe Docker do
 
     let(:info) { subject.info }
     let(:keys) do
-      %w(Containers Debug IPv4Forwarding Images IndexServerAddress
-         KernelVersion LXCVersion MemoryLimit NEventsListener NFd
-         NGoroutines)
+      %w(Containers Debug Driver DriverStatus ExecutionDriver
+         IPv4Forwarding Images IndexServerAddress InitPath
+         InitSha1 KernelVersion MemoryLimit NEventsListener NFd
+         NGoroutines SwapLimit)
     end
 
     it 'returns the info as a Hash', :vcr do

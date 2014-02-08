@@ -61,7 +61,7 @@ class Docker::Image
   # Insert a file into the Image, returns a new Image that has that file.
   def insert(query = {})
     body = connection.post(path_for(:insert), query)
-    if (id = body.match(/{"Id":"([a-f0-9]+)"}\z/)).nil? || id[1].empty?
+    if (id = body.match(/{"status":"([a-f0-9]+)"}\z/)).nil? || id[1].empty?
       raise UnexpectedResponseError, "Could not find Id in '#{body}'"
     else
       self.class.send(:new, connection, id[1])
@@ -219,7 +219,8 @@ class Docker::Image
   def self.response_block_for_build(body)
     lambda do |chunk, remaining, total|
       body << chunk
-      yield JSON.parse(chunk) if block_given?
+      yield chunk if block_given?
     end
   end
+  
 end

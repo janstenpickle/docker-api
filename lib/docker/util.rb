@@ -5,6 +5,18 @@ module Docker::Util
 
   module_function
 
+  def parse_output(body)
+    if body.include('}{')
+      body.split('}{').each do | line |
+        line = "{#{line}" unless line =~ /^{\.+/
+        line = "{#{line}" unless line =~ /\.+}$/
+        parse_json(line)
+      end
+    else
+      parse_json(body)
+    end
+  end
+
   def parse_json(body)
     JSON.parse(body) unless body.nil? || body.empty? || (body == 'null')
   rescue JSON::ParserError => ex

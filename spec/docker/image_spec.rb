@@ -388,7 +388,7 @@ describe Docker::Image do
 
         it 'calls the block and passes build output', :vcr do
           image # Create the image variable, which is lazy-loaded by Rspec
-          expect(build_output).to start_with("Step 1 : FROM base")
+          expect(build_output['stream']).to start_with("Step 1 : FROM base")
         end
       end
     end

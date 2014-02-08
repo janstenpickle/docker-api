@@ -2,13 +2,13 @@
 http_interactions:
 - request:
     method: post
-    uri: unix:///var/run/docker.sock/v1.6/images/create?fromImage=base
+    uri: unix:///var/run/docker.sock/v1.9/images/create?fromImage=base
     body:
       encoding: US-ASCII
       string: ''
     headers:
       User-Agent:
-      - Swipely/Docker-API 1.7.3
+      - Swipely/Docker-API 1.7.6
       Content-Type:
       - text/plain
   response:
@@ -16,32 +16,33 @@ http_interactions:
       code: 200
       message: 
     headers:
-      !binary "Q29udGVudC1UeXBl":
-      - !binary |-
-        YXBwbGljYXRpb24vanNvbg==
-      !binary "RGF0ZQ==":
-      - !binary |-
-        TW9uLCAwMiBEZWMgMjAxMyAxNzozMzoxOCBHTVQ=
-      !binary "VHJhbnNmZXItRW5jb2Rpbmc=":
-      - !binary |-
-        Y2h1bmtlZA==
-    body:
-      encoding: US-ASCII
-      string: ! '{"status":"Pulling repository base"}{"status":"Pulling","progress":"image
-        (ubuntu-quantl) from base","id":"b750fe79269d"}{"status":"Pulling","progress":"image
-        (ubuntu-quantl) from base, endpoint: https://cdn-registry-1.docker.io/v1/","id":"b750fe79269d"}{"status":"Pulling","progress":"dependend
-        layers","id":"b750fe79269d"}{"status":"Download","progress":"complete","id":"b750fe79269d"}{"status":"Download","progress":"complete","id":"27cf78414709"}{"status":"Download","progress":"complete","id":"b750fe79269d"}'
-    http_version: 
-  recorded_at: Mon, 02 Dec 2013 17:33:19 GMT
-- request:
-    method: post
-    uri: unix:///var/run/docker.sock/v1.6/containers/create
+      Content-Type:
+      - application/json
+      Date:
+      - Sat, 08 Feb 2014 15:26:21 GMT
+      Connection:
+      - close
+      Transfer-Encoding:
+      - ''
     body:
       encoding: UTF-8
-      string: ! '{"Image":"base","Cmd":["true"]}'
+      string: '{"status":"Pulling repository base"}{"status":"Pulling image (ubuntu-quantl)
+        from base","progressDetail":{},"id":"b750fe79269d"}{"status":"Pulling image
+        (ubuntu-quantl) from base, endpoint: https://cdn-registry-1.docker.io/v1/","progressDetail":{},"id":"b750fe79269d"}{"status":"Pulling
+        dependent layers","progressDetail":{},"id":"b750fe79269d"}{"status":"Download
+        complete","progressDetail":{},"id":"27cf78414709"}{"status":"Download complete","progressDetail":{},"id":"b750fe79269d"}{"status":"Download
+        complete","progressDetail":{},"id":"b750fe79269d"}'
+    http_version: 
+  recorded_at: Sat, 08 Feb 2014 15:26:23 GMT
+- request:
+    method: post
+    uri: unix:///var/run/docker.sock/v1.9/containers/create
+    body:
+      encoding: UTF-8
+      string: '{"Image":"base","Cmd":["true"]}'
     headers:
       User-Agent:
-      - Swipely/Docker-API 1.7.3
+      - Swipely/Docker-API 1.7.6
       Content-Type:
       - application/json
   response:
@@ -49,29 +50,29 @@ http_interactions:
       code: 201
       message: 
     headers:
-      !binary "Q29udGVudC1UeXBl":
-      - !binary |-
-        YXBwbGljYXRpb24vanNvbg==
-      !binary "RGF0ZQ==":
-      - !binary |-
-        TW9uLCAwMiBEZWMgMjAxMyAxNzozMzoxOSBHTVQ=
-      !binary "Q29udGVudC1MZW5ndGg=":
-      - !binary |-
-        MjE=
-    body:
-      encoding: US-ASCII
-      string: ! '{"Id":"2d80c73471b2"}'
-    http_version: 
-  recorded_at: Mon, 02 Dec 2013 17:33:19 GMT
-- request:
-    method: post
-    uri: unix:///var/run/docker.sock/v1.6/containers/2d80c73471b2/start
+      Content-Type:
+      - application/json
+      Date:
+      - Sat, 08 Feb 2014 15:26:23 GMT
+      Content-Length:
+      - '90'
+      Connection:
+      - close
     body:
       encoding: UTF-8
-      string: ! '{}'
+      string: |
+        {"Id":"e374970e7b7ebec3382f897db3b8f8b0f89eb4da882bf9afcf605e57662b1b4a","Warnings":null}
+    http_version: 
+  recorded_at: Sat, 08 Feb 2014 15:26:23 GMT
+- request:
+    method: post
+    uri: unix:///var/run/docker.sock/v1.9/containers/e374970e7b7ebec3382f897db3b8f8b0f89eb4da882bf9afcf605e57662b1b4a/start
+    body:
+      encoding: UTF-8
+      string: '{}'
     headers:
       User-Agent:
-      - Swipely/Docker-API 1.7.3
+      - Swipely/Docker-API 1.7.6
       Content-Type:
       - application/json
   response:
@@ -79,29 +80,28 @@ http_interactions:
       code: 204
       message: 
     headers:
-      !binary "RGF0ZQ==":
-      - !binary |-
-        TW9uLCAwMiBEZWMgMjAxMyAxNzozMzoxOSBHTVQ=
-      !binary "Q29udGVudC1MZW5ndGg=":
-      - !binary |-
-        MA==
-      !binary "Q29udGVudC1UeXBl":
-      - !binary |-
-        dGV4dC9wbGFpbjsgY2hhcnNldD11dGYtOA==
+      Date:
+      - Sat, 08 Feb 2014 15:26:23 GMT
+      Content-Length:
+      - '0'
+      Content-Type:
+      - text/plain; charset=utf-8
+      Connection:
+      - close
     body:
-      encoding: US-ASCII
+      encoding: UTF-8
       string: ''
     http_version: 
-  recorded_at: Mon, 02 Dec 2013 17:33:19 GMT
+  recorded_at: Sat, 08 Feb 2014 15:26:23 GMT
 - request:
     method: post
-    uri: unix:///var/run/docker.sock/v1.6/commit?container=2d80c734&repo=test%2Fbase
+    uri: unix:///var/run/docker.sock/v1.9/commit?container=e374970e&repo=test%2Fbase
     body:
       encoding: UTF-8
       string: 'null'
     headers:
       User-Agent:
-      - Swipely/Docker-API 1.7.3
+      - Swipely/Docker-API 1.7.6
       Content-Type:
       - application/json
   response:
@@ -109,29 +109,29 @@ http_interactions:
       code: 201
       message: 
     headers:
-      !binary "Q29udGVudC1UeXBl":
-      - !binary |-
-        YXBwbGljYXRpb24vanNvbg==
-      !binary "RGF0ZQ==":
-      - !binary |-
-        TW9uLCAwMiBEZWMgMjAxMyAxNzozMzoxOSBHTVQ=
-      !binary "Q29udGVudC1MZW5ndGg=":
-      - !binary |-
-        MjE=
+      Content-Type:
+      - application/json
+      Date:
+      - Sat, 08 Feb 2014 15:26:25 GMT
+      Content-Length:
+      - '74'
+      Connection:
+      - close
     body:
-      encoding: US-ASCII
-      string: ! '{"Id":"52e99fde55be"}'
+      encoding: UTF-8
+      string: |
+        {"Id":"522eebfc279b2c99060cc2fe8f6fe850556980fe7109dbcfcaa522d6a2558d7b"}
     http_version: 
-  recorded_at: Mon, 02 Dec 2013 17:33:19 GMT
+  recorded_at: Sat, 08 Feb 2014 15:26:25 GMT
 - request:
     method: get
-    uri: unix:///var/run/docker.sock/v1.6/images/json
+    uri: unix:///var/run/docker.sock/v1.9/images/json
     body:
       encoding: US-ASCII
       string: ''
     headers:
       User-Agent:
-      - Swipely/Docker-API 1.7.3
+      - Swipely/Docker-API 1.7.6
       Content-Type:
       - text/plain
   response:
@@ -139,64 +139,41 @@ http_interactions:
       code: 200
       message: 
     headers:
-      !binary "Q29udGVudC1UeXBl":
-      - !binary |-
-        YXBwbGljYXRpb24vanNvbg==
-      !binary "RGF0ZQ==":
-      - !binary |-
-        TW9uLCAwMiBEZWMgMjAxMyAxNzozMzoxOSBHTVQ=
-      !binary "Q29udGVudC1MZW5ndGg=":
-      - !binary |-
-        ODY1
-    body:
-      encoding: US-ASCII
-      string: ! '[{"Repository":"test/base","Tag":"latest","Id":"52e99fde55be23a6cec1a36cbf3cd0e49c6a9bc6e3a335d7e9b9e237d1b63b6f","Created":1386005599,"Size":16391,"VirtualSize":180132526},{"Repository":"base","Tag":"latest","Id":"b750fe79269d2ec9a3c593ef05b4332b1d1a02a62b4accb2c21d589ff2f5f2dc","Created":1364102658,"Size":24653,"VirtualSize":180116135},{"Repository":"base","Tag":"ubuntu-12.10","Id":"b750fe79269d2ec9a3c593ef05b4332b1d1a02a62b4accb2c21d589ff2f5f2dc","Created":1364102658,"Size":24653,"VirtualSize":180116135},{"Repository":"base","Tag":"ubuntu-quantal","Id":"b750fe79269d2ec9a3c593ef05b4332b1d1a02a62b4accb2c21d589ff2f5f2dc","Created":1364102658,"Size":24653,"VirtualSize":180116135},{"Repository":"base","Tag":"ubuntu-quantl","Id":"b750fe79269d2ec9a3c593ef05b4332b1d1a02a62b4accb2c21d589ff2f5f2dc","Created":1364102658,"Size":24653,"VirtualSize":180116135}]'
-    http_version: 
-  recorded_at: Mon, 02 Dec 2013 17:33:19 GMT
-- request:
-    method: post
-    uri: unix:///var/run/docker.sock/v1.6/images/test/base/push
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      User-Agent:
-      - Swipely/Docker-API 1.7.3
+      Date:
+      - Sat, 08 Feb 2014 15:26:25 GMT
       Content-Type:
-      - text/plain
-      X-Registry-Auth:
-      - eyJ1c2VybmFtZSI6InRlc3QiLCJwYXNzd29yZCI6InRlc3QiLCJhdXRoIjoiIiwiZW1haWwiOiJ0ZXN0QHRlc3QuY29tIn0=
-  response:
-    status:
-      code: 200
-      message: 
-    headers:
-      !binary "Q29udGVudC1UeXBl":
-      - !binary |-
-        YXBwbGljYXRpb24vanNvbg==
-      !binary "RGF0ZQ==":
-      - !binary |-
-        TW9uLCAwMiBEZWMgMjAxMyAxNzozMzoxOSBHTVQ=
-      !binary "VHJhbnNmZXItRW5jb2Rpbmc=":
-      - !binary |-
-        Y2h1bmtlZA==
+      - text/plain; charset=utf-8
+      Connection:
+      - close
+      Transfer-Encoding:
+      - ''
     body:
-      encoding: US-ASCII
-      string: ! '{"status":"The push refers to a repository [test/base] (len: 1)"}{"status":"Sending
-        image list"}{"status":"Pushing repository test/base (1 tags)"}{"status":"Pushing
-        27cf784147099545"}{"status":"Image 27cf784147099545 already pushed, skipping"}{"status":"Pushing
-        tags for rev [27cf784147099545] on {https://registry-1.docker.io/v1/repositories/test/base/tags/latest}"}{"status":"Pushing
-        tags for rev [b750fe79269d2ec9a3c593ef05b4332b1d1a02a62b4accb2c21d589ff2f5f2dc]
-        on {https://registry-1.docker.io/v1/repositories/test/base/tags/latest}"}{"status":"Image
-        b750fe79269d2ec9a3c593ef05b4332b1d1a02a62b4accb2c21d589ff2f5f2dc already pushed,
-        skipping"}{"status":"Pushing 52e99fde55be23a6cec1a36cbf3cd0e49c6a9bc6e3a335d7e9b9e237d1b63b6f"}{"status":"Buffering
-        to disk","progress":"10240/? (n/a)"}{}{"status":"Pushing","progress":"   512
-        B/10.24 kB (5%)"}{"status":"Pushing","progress":"1.024 kB/10.24 kB (10%)"}{"status":"Pushing","progress":"1.536
-        kB/10.24 kB (15%)"}{"status":"Pushing","progress":"2.048 kB/10.24 kB (20%)"}{"status":"Pushing","progress":"
-        2.56 kB/10.24 kB (25%)"}{"status":"Pushing","progress":"3.072 kB/10.24 kB
-        (30%)"}{"status":"Pushing","progress":"3.584 kB/10.24 kB (35%)"}{"status":"Pushing","progress":"4.096
-        kB/10.24 kB (40%)"}{}{"status":"Pushing tags for rev [52e99fde55be23a6cec1a36cbf3cd0e49c6a9bc6e3a335d7e9b9e237d1b63b6f]
-        on {https://registry-1.docker.io/v1/repositories/test/base/tags/latest}"}'
+      encoding: UTF-8
+      string: |-
+        [{"Created":1391873184,"Id":"522eebfc279b2c99060cc2fe8f6fe850556980fe7109dbcfcaa522d6a2558d7b","ParentId":"b750fe79269d2ec9a3c593ef05b4332b1d1a02a62b4accb2c21d589ff2f5f2dc","RepoTags":["test/base:latest"],"Size":7,"VirtualSize":175307042}
+        ,{"Created":1391873179,"Id":"5032f401f86691e59277f6700f0fadd02b94717a4892a83d0846017845ae14b2","ParentId":"b750fe79269d2ec9a3c593ef05b4332b1d1a02a62b4accb2c21d589ff2f5f2dc","RepoTags":["\u003cnone\u003e:\u003cnone\u003e"],"Size":93431,"VirtualSize":175400466}
+        ,{"Created":1391872957,"Id":"e357d0d2119ba50ae7b52261eb990f23333c9bdb1042c0430433cb7f18a2a82a","ParentId":"b750fe79269d2ec9a3c593ef05b4332b1d1a02a62b4accb2c21d589ff2f5f2dc","RepoTags":["\u003cnone\u003e:\u003cnone\u003e"],"Size":0,"VirtualSize":175307035}
+        ,{"Created":1391872942,"Id":"c19ee6cc9bd896598bb6a6f6b4c2d01d0f11b49b546c4fd007e00d18806a87ba","ParentId":"b750fe79269d2ec9a3c593ef05b4332b1d1a02a62b4accb2c21d589ff2f5f2dc","RepoTags":["\u003cnone\u003e:\u003cnone\u003e"],"Size":7,"VirtualSize":175307042}
+        ,{"Created":1391872937,"Id":"a9615d5c52ab3f334c2c39ba5b33b9f7430b5bcc5bb731db74cf26a021682759","ParentId":"b750fe79269d2ec9a3c593ef05b4332b1d1a02a62b4accb2c21d589ff2f5f2dc","RepoTags":["\u003cnone\u003e:\u003cnone\u003e"],"Size":93431,"VirtualSize":175400466}
+        ,{"Created":1391872856,"Id":"907adcaad98bdfe55d47183814fc0332bf9d996d4c5ab7932947e09ac08886ad","ParentId":"b750fe79269d2ec9a3c593ef05b4332b1d1a02a62b4accb2c21d589ff2f5f2dc","RepoTags":["\u003cnone\u003e:\u003cnone\u003e"],"Size":0,"VirtualSize":175307035}
+        ,{"Created":1391872842,"Id":"253dd9fc807255533a27c4ddd76f14ba6bbbe0c24bee378df84dcbfeafab5418","ParentId":"b750fe79269d2ec9a3c593ef05b4332b1d1a02a62b4accb2c21d589ff2f5f2dc","RepoTags":["\u003cnone\u003e:\u003cnone\u003e"],"Size":7,"VirtualSize":175307042}
+        ,{"Created":1391872836,"Id":"32cc56af1917a09449b6b0ad8f3e26fd6fc55968eab7e505881a26131924a7a9","ParentId":"b750fe79269d2ec9a3c593ef05b4332b1d1a02a62b4accb2c21d589ff2f5f2dc","RepoTags":["\u003cnone\u003e:\u003cnone\u003e"],"Size":93431,"VirtualSize":175400466}
+        ,{"Created":1391871979,"Id":"01c67a2a684db57033d92bd08dd3b88399b883b046c569e15c48d0931e14d078","ParentId":"b750fe79269d2ec9a3c593ef05b4332b1d1a02a62b4accb2c21d589ff2f5f2dc","RepoTags":["\u003cnone\u003e:\u003cnone\u003e"],"Size":93431,"VirtualSize":175400466}
+        ,{"Created":1391871907,"Id":"2828a0992f9ce7e5436ce22f6633bf616445f170190a7bc84d82aca8ed8c2ce2","ParentId":"b750fe79269d2ec9a3c593ef05b4332b1d1a02a62b4accb2c21d589ff2f5f2dc","RepoTags":["\u003cnone\u003e:\u003cnone\u003e"],"Size":93431,"VirtualSize":175400466}
+        ,{"Created":1391871584,"Id":"e9e5803feeb98135fe77534e94a8c60b55ec460f41d5a2452849cff8939922b0","ParentId":"b750fe79269d2ec9a3c593ef05b4332b1d1a02a62b4accb2c21d589ff2f5f2dc","RepoTags":["swipely/base2:latest"],"Size":18,"VirtualSize":175307053}
+        ,{"Created":1391871581,"Id":"f72c95284e14a8a1ee30e2b0da15280b425c7f304223bf3b5256981740668b4c","ParentId":"b750fe79269d2ec9a3c593ef05b4332b1d1a02a62b4accb2c21d589ff2f5f2dc","RepoTags":["swipely/base:latest"],"Size":7,"VirtualSize":175307042}
+        ,{"Created":1391871574,"Id":"8b91f5af6d51b605a01add94123eccbb4d3ba18de83836b8c7848323ce8aa386","ParentId":"b750fe79269d2ec9a3c593ef05b4332b1d1a02a62b4accb2c21d589ff2f5f2dc","RepoTags":["\u003cnone\u003e:\u003cnone\u003e"],"Size":0,"VirtualSize":175307035}
+        ,{"Created":1391871562,"Id":"07d32985ace1032a78e1b75fda62801bcc92d92ac017d55a5a8dc544e7d63041","ParentId":"b750fe79269d2ec9a3c593ef05b4332b1d1a02a62b4accb2c21d589ff2f5f2dc","RepoTags":["\u003cnone\u003e:\u003cnone\u003e"],"Size":7,"VirtualSize":175307042}
+        ,{"Created":1391871557,"Id":"797746c445fe8700a848913882b21b477ba2c74031b220b982c82a2e3eceef1c","ParentId":"7449affeb790d7546c6a77e7257415b253ddd3dac9eb794f6d577834214600d4","RepoTags":["\u003cnone\u003e:\u003cnone\u003e"],"Size":328,"VirtualSize":175307401}
+        ,{"Created":1391871551,"Id":"7dcc4d94107f1e8b4069f779cc627f8309004536b9ec9897d6f7561794438db5","ParentId":"b750fe79269d2ec9a3c593ef05b4332b1d1a02a62b4accb2c21d589ff2f5f2dc","RepoTags":["\u003cnone\u003e:\u003cnone\u003e"],"Size":93431,"VirtualSize":175400466}
+        ,{"Created":1388088790,"Id":"fce3b2a7c017f8c4f0e9f230189643358a1193f877da638d998a5e2d0795861d","ParentId":"","RepoTags":["test.me.com/test:chris"],"Size":173138934,"VirtualSize":173138934}
+        ,{"Created":1388088723,"Id":"0f4ba48d355180d95412bcb217d5e0975ec1fedcbc13c8d5ab87dd2d3375a2fd","ParentId":"","RepoTags":["\u003cnone\u003e:\u003cnone\u003e"],"Size":173034134,"VirtualSize":173034134}
+        ,{"Created":1388088070,"Id":"9eededed1ce376d3c11368deb4fe3864e0ef6a57aae9b6ba37ce1b813f51fc5e","ParentId":"","RepoTags":["\u003cnone\u003e:\u003cnone\u003e"],"Size":172929334,"VirtualSize":172929334}
+        ,{"Created":1388086213,"Id":"3dacc0b3eaed5d46e32ff6bad0bf851025738420305b1bc85c105ed685dd5458","ParentId":"","RepoTags":["precise:latest"],"Size":172770385,"VirtualSize":172770385}
+        ,{"Created":1387483453,"Id":"c3c114a68226afe5fe226dcb1fc18026d21b02a7ed1d0feb87629bef2cb3ac0d","ParentId":"b750fe79269d2ec9a3c593ef05b4332b1d1a02a62b4accb2c21d589ff2f5f2dc","RepoTags":["sdfsdf.sdfsdf.com/dsf:dsf3e3","sdfsdf.sdfsdf.com/dsf::latest","sdfsdf.sdfsdf.com/dsf:dsf3e3:latest","/dsf:latest"],"Size":7,"VirtualSize":175307042}
+        ,{"Created":1365714795,"Id":"8dbd9e392a964056420e5d58ca5cc376ef18e2de93b5cc90e868a1bbc8318c1c","ParentId":"","RepoTags":["test.me.com/ubuntu:chris","ubuntu:12.04","ubuntu:latest","ubuntu:precise","test.me.com/test:44"],"Size":128029199,"VirtualSize":128029199}
+        ,{"Created":1364102658,"Id":"b750fe79269d2ec9a3c593ef05b4332b1d1a02a62b4accb2c21d589ff2f5f2dc","ParentId":"27cf784147099545","RepoTags":["base:latest","base:ubuntu-12.10","base:ubuntu-quantal","base:ubuntu-quantl","ubuntu:12.10","ubuntu:quantal","base2:latest"],"Size":77,"VirtualSize":175307035}
+        ]
     http_version: 
-  recorded_at: Mon, 02 Dec 2013 17:33:24 GMT
-recorded_with: VCR 2.7.0
+  recorded_at: Sat, 08 Feb 2014 15:26:25 GMT
+recorded_with: VCR 2.8.0
