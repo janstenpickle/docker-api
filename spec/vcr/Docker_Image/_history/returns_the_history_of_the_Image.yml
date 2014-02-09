@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: post
-    uri: unix:///var/run/docker.sock/v1.9/images/create?fromImage=base
+    uri: unix:///var/run/docker.sock/v1.9/images/create?fromImage=ubuntu
     body:
       encoding: US-ASCII
       string: ''
@@ -19,24 +19,54 @@ http_interactions:
       Content-Type:
       - application/json
       Date:
-      - Sat, 08 Feb 2014 15:26:28 GMT
+      - Sun, 09 Feb 2014 15:42:28 GMT
       Connection:
       - close
       Transfer-Encoding:
       - ''
     body:
       encoding: UTF-8
-      string: '{"status":"Pulling repository base"}{"status":"Pulling image (ubuntu-quantl)
-        from base","progressDetail":{},"id":"b750fe79269d"}{"status":"Pulling image
-        (ubuntu-quantl) from base, endpoint: https://cdn-registry-1.docker.io/v1/","progressDetail":{},"id":"b750fe79269d"}{"status":"Pulling
-        dependent layers","progressDetail":{},"id":"b750fe79269d"}{"status":"Download
-        complete","progressDetail":{},"id":"27cf78414709"}{"status":"Download complete","progressDetail":{},"id":"b750fe79269d"}{"status":"Download
-        complete","progressDetail":{},"id":"b750fe79269d"}'
+      string: "{\"status\":\"Pulling repository ubuntu\"}{\"status\":\"Pulling image
+        (saucy) from ubuntu\",\"progressDetail\":{},\"id\":\"9f676bd305a4\"}{\"status\":\"Pulling
+        image (saucy) from ubuntu, endpoint: https://cdn-registry-1.docker.io/v1/\",\"progressDetail\":{},\"id\":\"9f676bd305a4\"}{\"status\":\"Pulling
+        image (precise) from ubuntu\",\"progressDetail\":{},\"id\":\"9cd978db300e\"}{\"status\":\"Pulling
+        image (precise) from ubuntu, endpoint: https://cdn-registry-1.docker.io/v1/\",\"progressDetail\":{},\"id\":\"9cd978db300e\"}{\"status\":\"Pulling
+        image (raring) from ubuntu\",\"progressDetail\":{},\"id\":\"eb601b8965b8\"}{\"status\":\"Pulling
+        image (raring) from ubuntu, endpoint: https://cdn-registry-1.docker.io/v1/\",\"progressDetail\":{},\"id\":\"eb601b8965b8\"}{\"status\":\"Pulling
+        image (quantal) from ubuntu\",\"progressDetail\":{},\"id\":\"5ac751e8d623\"}{\"status\":\"Pulling
+        image (quantal) from ubuntu, endpoint: https://cdn-registry-1.docker.io/v1/\",\"progressDetail\":{},\"id\":\"5ac751e8d623\"}{\"status\":\"Pulling
+        image (lucid) from ubuntu\",\"progressDetail\":{},\"id\":\"9cc9ea5ea540\"}{\"status\":\"Pulling
+        image (lucid) from ubuntu, endpoint: https://cdn-registry-1.docker.io/v1/\",\"progressDetail\":{},\"id\":\"9cc9ea5ea540\"}{\"status\":\"Pulling
+        dependent layers\",\"progressDetail\":{},\"id\":\"eb601b8965b8\"}{\"status\":\"Download
+        complete\",\"progressDetail\":{},\"id\":\"511136ea3c5a\"}{\"status\":\"Download
+        complete\",\"progressDetail\":{},\"id\":\"f323cf34fd77\"}{\"status\":\"Download
+        complete\",\"progressDetail\":{},\"id\":\"eb601b8965b8\"}{\"status\":\"Download
+        complete\",\"progressDetail\":{},\"id\":\"eb601b8965b8\"}{\"status\":\"Pulling
+        dependent layers\",\"progressDetail\":{},\"id\":\"5ac751e8d623\"}{\"status\":\"Download
+        complete\",\"progressDetail\":{},\"id\":\"511136ea3c5a\"}{\"status\":\"Download
+        complete\",\"progressDetail\":{},\"id\":\"321f7f4200f4\"}{\"status\":\"Download
+        complete\",\"progressDetail\":{},\"id\":\"5ac751e8d623\"}{\"status\":\"Download
+        complete\",\"progressDetail\":{},\"id\":\"5ac751e8d623\"}{\"status\":\"Pulling
+        dependent layers\",\"progressDetail\":{},\"id\":\"9cd978db300e\"}{\"status\":\"Download
+        complete\",\"progressDetail\":{},\"id\":\"511136ea3c5a\"}{\"status\":\"Download
+        complete\",\"progressDetail\":{},\"id\":\"6170bb7b0ad1\"}{\"status\":\"Download
+        complete\",\"progressDetail\":{},\"id\":\"9cd978db300e\"}{\"status\":\"Download
+        complete\",\"progressDetail\":{},\"id\":\"9cd978db300e\"}{\"status\":\"Pulling
+        dependent layers\",\"progressDetail\":{},\"id\":\"9f676bd305a4\"}{\"status\":\"Download
+        complete\",\"progressDetail\":{},\"id\":\"511136ea3c5a\"}{\"status\":\"Download
+        complete\",\"progressDetail\":{},\"id\":\"1c7f181e78b9\"}{\"status\":\"Download
+        complete\",\"progressDetail\":{},\"id\":\"9f676bd305a4\"}{\"status\":\"Download
+        complete\",\"progressDetail\":{},\"id\":\"9f676bd305a4\"}{\"status\":\"Pulling
+        dependent layers\",\"progressDetail\":{},\"id\":\"9cc9ea5ea540\"}{\"status\":\"Download
+        complete\",\"progressDetail\":{},\"id\":\"511136ea3c5a\"}{\"status\":\"Download
+        complete\",\"progressDetail\":{},\"id\":\"7a4f87241845\"}{\"status\":\"Download
+        complete\",\"progressDetail\":{},\"id\":\"9cc9ea5ea540\"}{\"status\":\"Download
+        complete\",\"progressDetail\":{},\"id\":\"9cc9ea5ea540\"}"
     http_version: 
-  recorded_at: Sat, 08 Feb 2014 15:26:30 GMT
+  recorded_at: Sun, 09 Feb 2014 15:42:30 GMT
 - request:
     method: get
-    uri: unix:///var/run/docker.sock/v1.9/images/base/history
+    uri: unix:///var/run/docker.sock/v1.9/images/ubuntu/history
     body:
       encoding: US-ASCII
       string: ''
@@ -51,9 +81,9 @@ http_interactions:
       message: 
     headers:
       Date:
-      - Sat, 08 Feb 2014 15:26:30 GMT
+      - Sun, 09 Feb 2014 15:42:30 GMT
       Content-Length:
-      - '356'
+      - '705'
       Content-Type:
       - text/plain; charset=utf-8
       Connection:
@@ -61,9 +91,10 @@ http_interactions:
     body:
       encoding: UTF-8
       string: |-
-        [{"Created":1364102658,"CreatedBy":"/bin/bash","Id":"b750fe79269d2ec9a3c593ef05b4332b1d1a02a62b4accb2c21d589ff2f5f2dc","Size":77,"Tags":["base:latest","base:ubuntu-12.10","base:ubuntu-quantal","base:ubuntu-quantl","ubuntu:12.10","ubuntu:quantal","base2:latest"]}
-        ,{"Created":1364068391,"CreatedBy":"","Id":"27cf784147099545","Size":175306958,"Tags":null}
+        [{"Created":1391448149,"CreatedBy":"/bin/sh -c #(nop) ADD precise.tar.xz in /","Id":"9cd978db300e27386baa9dd791bf6dc818f13e52235b26e95703361ec3c94dc6","Size":204705001,"Tags":["ubuntu:12.04","ubuntu:latest","ubuntu:precise","ubuntu2:latest"]}
+        ,{"Created":1391448134,"CreatedBy":"/bin/sh -c #(nop) MAINTAINER Tianon Gravi \u003cadmwiggin@gmail.com\u003e - mkimage-debootstrap.sh -i iproute,iputils-ping,ubuntu-minimal -t precise.tar.xz precise http://archive.ubuntu.com/ubuntu/","Id":"6170bb7b0ad1003a827e4dc5253ba49f6719599eac485db51eaafd507c13c311","Size":0,"Tags":null}
+        ,{"Created":1371157430,"CreatedBy":"","Id":"511136ea3c5a64f264b78b5433614aec563103b4d4702f3ba7d4d2698e22c158","Size":0,"Tags":null}
         ]
     http_version: 
-  recorded_at: Sat, 08 Feb 2014 15:26:30 GMT
+  recorded_at: Sun, 09 Feb 2014 15:42:30 GMT
 recorded_with: VCR 2.8.0

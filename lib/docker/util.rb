@@ -5,15 +5,15 @@ module Docker::Util
 
   module_function
 
-  def parse_output(body)
-    if body.include('}{')
+  def parse_output(body, &block)
+    if body.include?('}{')
       body.split('}{').each do | line |
-        line = "{#{line}" unless line =~ /^{\.+/
-        line = "{#{line}" unless line =~ /\.+}$/
-        parse_json(line)
+        line = "{#{line}" unless line =~ /^{/
+        line = "#{line}}" unless line =~ /}$/
+        block.call(parse_json(line))
       end
     else
-      parse_json(body)
+      block.call(parse_json(body))
     end
   end
 

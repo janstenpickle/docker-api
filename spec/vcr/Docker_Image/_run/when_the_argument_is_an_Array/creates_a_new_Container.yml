@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: post
-    uri: unix:///var/run/docker.sock/v1.9/images/create?fromImage=base
+    uri: unix:///var/run/docker.sock/v1.9/images/create?fromImage=ubuntu
     body:
       encoding: US-ASCII
       string: ''
@@ -19,27 +19,57 @@ http_interactions:
       Content-Type:
       - application/json
       Date:
-      - Sat, 08 Feb 2014 15:26:32 GMT
+      - Sun, 09 Feb 2014 15:45:09 GMT
       Connection:
       - close
       Transfer-Encoding:
       - ''
     body:
       encoding: UTF-8
-      string: '{"status":"Pulling repository base"}{"status":"Pulling image (ubuntu-quantl)
-        from base","progressDetail":{},"id":"b750fe79269d"}{"status":"Pulling image
-        (ubuntu-quantl) from base, endpoint: https://cdn-registry-1.docker.io/v1/","progressDetail":{},"id":"b750fe79269d"}{"status":"Pulling
-        dependent layers","progressDetail":{},"id":"b750fe79269d"}{"status":"Download
-        complete","progressDetail":{},"id":"27cf78414709"}{"status":"Download complete","progressDetail":{},"id":"b750fe79269d"}{"status":"Download
-        complete","progressDetail":{},"id":"b750fe79269d"}'
+      string: "{\"status\":\"Pulling repository ubuntu\"}{\"status\":\"Pulling image
+        (raring) from ubuntu\",\"progressDetail\":{},\"id\":\"eb601b8965b8\"}{\"status\":\"Pulling
+        image (raring) from ubuntu, endpoint: https://cdn-registry-1.docker.io/v1/\",\"progressDetail\":{},\"id\":\"eb601b8965b8\"}{\"status\":\"Pulling
+        image (lucid) from ubuntu\",\"progressDetail\":{},\"id\":\"9cc9ea5ea540\"}{\"status\":\"Pulling
+        image (lucid) from ubuntu, endpoint: https://cdn-registry-1.docker.io/v1/\",\"progressDetail\":{},\"id\":\"9cc9ea5ea540\"}{\"status\":\"Pulling
+        image (saucy) from ubuntu\",\"progressDetail\":{},\"id\":\"9f676bd305a4\"}{\"status\":\"Pulling
+        image (saucy) from ubuntu, endpoint: https://cdn-registry-1.docker.io/v1/\",\"progressDetail\":{},\"id\":\"9f676bd305a4\"}{\"status\":\"Pulling
+        image (precise) from ubuntu\",\"progressDetail\":{},\"id\":\"9cd978db300e\"}{\"status\":\"Pulling
+        image (precise) from ubuntu, endpoint: https://cdn-registry-1.docker.io/v1/\",\"progressDetail\":{},\"id\":\"9cd978db300e\"}{\"status\":\"Pulling
+        image (quantal) from ubuntu\",\"progressDetail\":{},\"id\":\"5ac751e8d623\"}{\"status\":\"Pulling
+        image (quantal) from ubuntu, endpoint: https://cdn-registry-1.docker.io/v1/\",\"progressDetail\":{},\"id\":\"5ac751e8d623\"}{\"status\":\"Pulling
+        dependent layers\",\"progressDetail\":{},\"id\":\"eb601b8965b8\"}{\"status\":\"Download
+        complete\",\"progressDetail\":{},\"id\":\"511136ea3c5a\"}{\"status\":\"Download
+        complete\",\"progressDetail\":{},\"id\":\"f323cf34fd77\"}{\"status\":\"Download
+        complete\",\"progressDetail\":{},\"id\":\"eb601b8965b8\"}{\"status\":\"Download
+        complete\",\"progressDetail\":{},\"id\":\"eb601b8965b8\"}{\"status\":\"Pulling
+        dependent layers\",\"progressDetail\":{},\"id\":\"9f676bd305a4\"}{\"status\":\"Download
+        complete\",\"progressDetail\":{},\"id\":\"511136ea3c5a\"}{\"status\":\"Download
+        complete\",\"progressDetail\":{},\"id\":\"1c7f181e78b9\"}{\"status\":\"Download
+        complete\",\"progressDetail\":{},\"id\":\"9f676bd305a4\"}{\"status\":\"Download
+        complete\",\"progressDetail\":{},\"id\":\"9f676bd305a4\"}{\"status\":\"Pulling
+        dependent layers\",\"progressDetail\":{},\"id\":\"5ac751e8d623\"}{\"status\":\"Download
+        complete\",\"progressDetail\":{},\"id\":\"511136ea3c5a\"}{\"status\":\"Download
+        complete\",\"progressDetail\":{},\"id\":\"321f7f4200f4\"}{\"status\":\"Download
+        complete\",\"progressDetail\":{},\"id\":\"5ac751e8d623\"}{\"status\":\"Download
+        complete\",\"progressDetail\":{},\"id\":\"5ac751e8d623\"}{\"status\":\"Pulling
+        dependent layers\",\"progressDetail\":{},\"id\":\"9cc9ea5ea540\"}{\"status\":\"Download
+        complete\",\"progressDetail\":{},\"id\":\"511136ea3c5a\"}{\"status\":\"Download
+        complete\",\"progressDetail\":{},\"id\":\"7a4f87241845\"}{\"status\":\"Download
+        complete\",\"progressDetail\":{},\"id\":\"9cc9ea5ea540\"}{\"status\":\"Download
+        complete\",\"progressDetail\":{},\"id\":\"9cc9ea5ea540\"}{\"status\":\"Pulling
+        dependent layers\",\"progressDetail\":{},\"id\":\"9cd978db300e\"}{\"status\":\"Download
+        complete\",\"progressDetail\":{},\"id\":\"511136ea3c5a\"}{\"status\":\"Download
+        complete\",\"progressDetail\":{},\"id\":\"6170bb7b0ad1\"}{\"status\":\"Download
+        complete\",\"progressDetail\":{},\"id\":\"9cd978db300e\"}{\"status\":\"Download
+        complete\",\"progressDetail\":{},\"id\":\"9cd978db300e\"}"
     http_version: 
-  recorded_at: Sat, 08 Feb 2014 15:26:33 GMT
+  recorded_at: Sun, 09 Feb 2014 15:45:11 GMT
 - request:
     method: post
     uri: unix:///var/run/docker.sock/v1.9/containers/create
     body:
       encoding: UTF-8
-      string: '{"Image":"base","Cmd":["which","pwd"]}'
+      string: "{\"Image\":\"ubuntu\",\"Cmd\":[\"which\",\"pwd\"]}"
     headers:
       User-Agent:
       - Swipely/Docker-API 1.7.6
@@ -53,7 +83,7 @@ http_interactions:
       Content-Type:
       - application/json
       Date:
-      - Sat, 08 Feb 2014 15:26:34 GMT
+      - Sun, 09 Feb 2014 15:45:11 GMT
       Content-Length:
       - '90'
       Connection:
@@ -61,15 +91,15 @@ http_interactions:
     body:
       encoding: UTF-8
       string: |
-        {"Id":"17d2f8e6e1167289c500185fb1f7526fff300228c360a035564562114496925b","Warnings":null}
+        {"Id":"c9cbfb7d5afa2509acc7565643963274a1ef5866c4066044d0e40ef1b1b03310","Warnings":null}
     http_version: 
-  recorded_at: Sat, 08 Feb 2014 15:26:34 GMT
+  recorded_at: Sun, 09 Feb 2014 15:45:11 GMT
 - request:
     method: post
-    uri: unix:///var/run/docker.sock/v1.9/containers/17d2f8e6e1167289c500185fb1f7526fff300228c360a035564562114496925b/start
+    uri: unix:///var/run/docker.sock/v1.9/containers/c9cbfb7d5afa2509acc7565643963274a1ef5866c4066044d0e40ef1b1b03310/start
     body:
       encoding: UTF-8
-      string: '{}'
+      string: "{}"
     headers:
       User-Agent:
       - Swipely/Docker-API 1.7.6
@@ -81,7 +111,7 @@ http_interactions:
       message: 
     headers:
       Date:
-      - Sat, 08 Feb 2014 15:26:34 GMT
+      - Sun, 09 Feb 2014 15:45:11 GMT
       Content-Length:
       - '0'
       Content-Type:
@@ -92,10 +122,10 @@ http_interactions:
       encoding: UTF-8
       string: ''
     http_version: 
-  recorded_at: Sat, 08 Feb 2014 15:26:34 GMT
+  recorded_at: Sun, 09 Feb 2014 15:45:11 GMT
 - request:
     method: post
-    uri: unix:///var/run/docker.sock/v1.9/containers/17d2f8e6e1167289c500185fb1f7526fff300228c360a035564562114496925b/attach?stderr=true&stdout=true&stream=true
+    uri: unix:///var/run/docker.sock/v1.9/containers/c9cbfb7d5afa2509acc7565643963274a1ef5866c4066044d0e40ef1b1b03310/attach?stderr=true&stdout=true&stream=true
     body:
       encoding: US-ASCII
       string: ''
@@ -116,5 +146,5 @@ http_interactions:
       string: !binary |-
         AQAAAAAAAAkvYmluL3B3ZAo=
     http_version: 
-  recorded_at: Sat, 08 Feb 2014 15:26:34 GMT
+  recorded_at: Sun, 09 Feb 2014 15:45:11 GMT
 recorded_with: VCR 2.8.0

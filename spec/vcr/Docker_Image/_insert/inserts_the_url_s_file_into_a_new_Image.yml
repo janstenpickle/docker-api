@@ -8,8 +8,8 @@ http_interactions:
       string: !binary |-
         RG9ja2VyZmlsZQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
         AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-        AAAAAAAAAAAAADAwMDA2NDAAMDAwMDAwMAAwMDAwMDAwADAwMDAwMDAwMDEx
-        ADAwMDAwMDAwMDAwADAxMzIzNQAgMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAADAwMDA2NDAAMDAwMDAwMAAwMDAwMDAwADAwMDAwMDAwMDEz
+        ADEyMjc1NzIxMjAyADAxMzI3NgAgMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
         AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
         AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAB1c3RhcgAwMHdoZWVs
         AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAd2hlZWwAAAAAAAAAAAAAAAAA
@@ -17,7 +17,7 @@ http_interactions:
         AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
         AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
         AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-        AAAAAAAAAAAAAAAAAAAAAABmcm9tIGJhc2UAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAABmcm9tIHVidW50dQAAAAAAAAAAAAAAAAAAAAAA
         AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
         AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
         AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
@@ -65,25 +65,20 @@ http_interactions:
       Content-Type:
       - application/json
       Date:
-      - Sat, 08 Feb 2014 15:26:16 GMT
+      - Sun, 09 Feb 2014 15:45:06 GMT
       Connection:
       - close
       Transfer-Encoding:
       - ''
     body:
       encoding: UTF-8
-      string: '{"stream":"Step 0 : from base\n"}{"status":"Pulling repository base"}{"status":"Pulling
-        image (ubuntu-quantl) from base","progressDetail":{},"id":"b750fe79269d"}{"status":"Pulling
-        image (ubuntu-quantl) from base, endpoint: https://cdn-registry-1.docker.io/v1/","progressDetail":{},"id":"b750fe79269d"}{"status":"Pulling
-        dependent layers","progressDetail":{},"id":"b750fe79269d"}{"status":"Download
-        complete","progressDetail":{},"id":"27cf78414709"}{"status":"Download complete","progressDetail":{},"id":"b750fe79269d"}{"status":"Download
-        complete","progressDetail":{},"id":"b750fe79269d"}{"stream":" ---\u003e b750fe79269d\n"}{"stream":"Successfully
-        built b750fe79269d\n"}'
+      string: "{\"stream\":\"Step 0 : from ubuntu\\n\"}{\"stream\":\" ---\\u003e 9cd978db300e\\n\"}{\"stream\":\"Successfully
+        built 9cd978db300e\\n\"}"
     http_version: 
-  recorded_at: Sat, 08 Feb 2014 15:26:17 GMT
+  recorded_at: Sun, 09 Feb 2014 15:45:06 GMT
 - request:
     method: post
-    uri: unix:///var/run/docker.sock/v1.9/images/b750fe79269d/insert?path=%2Fstallman&url=http%3A%2F%2Fstallman.org
+    uri: unix:///var/run/docker.sock/v1.9/images/9cd978db300e/insert?path=%2Fstallman&url=http%3A%2F%2Fstallman.org
     body:
       encoding: US-ASCII
       string: ''
@@ -100,23 +95,23 @@ http_interactions:
       Content-Type:
       - application/json
       Date:
-      - Sat, 08 Feb 2014 15:26:20 GMT
+      - Sun, 09 Feb 2014 15:45:07 GMT
       Content-Length:
       - '208'
       Connection:
       - close
     body:
       encoding: UTF-8
-      string: '{"status":"Downloading","progressDetail":{"current":93431,"total":-1,"start":1391873178},"progress":"93.43
-        kB","id":"b750fe79269d"}{"status":"5032f401f86691e59277f6700f0fadd02b94717a4892a83d0846017845ae14b2"}'
+      string: "{\"status\":\"Downloading\",\"progressDetail\":{\"current\":93582,\"total\":-1,\"start\":1391960707},\"progress\":\"93.58
+        kB\",\"id\":\"9cd978db300e\"}{\"status\":\"6dd7dd2298af82c4fd0840d2c1e008c06d1ae46798f80f9bf122c5e30d8fac6e\"}"
     http_version: 
-  recorded_at: Sat, 08 Feb 2014 15:26:20 GMT
+  recorded_at: Sun, 09 Feb 2014 15:45:07 GMT
 - request:
     method: post
     uri: unix:///var/run/docker.sock/v1.9/containers/create
     body:
       encoding: UTF-8
-      string: '{"Image":"5032f401f86691e59277f6700f0fadd02b94717a4892a83d0846017845ae14b2","Cmd":["ls","/"]}'
+      string: "{\"Image\":\"6dd7dd2298af82c4fd0840d2c1e008c06d1ae46798f80f9bf122c5e30d8fac6e\",\"Cmd\":[\"ls\",\"/\"]}"
     headers:
       User-Agent:
       - Swipely/Docker-API 1.7.6
@@ -130,7 +125,7 @@ http_interactions:
       Content-Type:
       - application/json
       Date:
-      - Sat, 08 Feb 2014 15:26:20 GMT
+      - Sun, 09 Feb 2014 15:45:07 GMT
       Content-Length:
       - '90'
       Connection:
@@ -138,15 +133,15 @@ http_interactions:
     body:
       encoding: UTF-8
       string: |
-        {"Id":"a194549e505bbbd37efe7657d2cf9d0338dc895f7cf6bf9ae38819c7afb49ef2","Warnings":null}
+        {"Id":"5076d10928d822981775ecd890085e5e2c269b8b399aa8421b94ceb7a08c35af","Warnings":null}
     http_version: 
-  recorded_at: Sat, 08 Feb 2014 15:26:20 GMT
+  recorded_at: Sun, 09 Feb 2014 15:45:07 GMT
 - request:
     method: post
-    uri: unix:///var/run/docker.sock/v1.9/containers/a194549e505bbbd37efe7657d2cf9d0338dc895f7cf6bf9ae38819c7afb49ef2/start
+    uri: unix:///var/run/docker.sock/v1.9/containers/5076d10928d822981775ecd890085e5e2c269b8b399aa8421b94ceb7a08c35af/start
     body:
       encoding: UTF-8
-      string: '{}'
+      string: "{}"
     headers:
       User-Agent:
       - Swipely/Docker-API 1.7.6
@@ -158,7 +153,7 @@ http_interactions:
       message: 
     headers:
       Date:
-      - Sat, 08 Feb 2014 15:26:20 GMT
+      - Sun, 09 Feb 2014 15:45:07 GMT
       Content-Length:
       - '0'
       Content-Type:
@@ -169,10 +164,10 @@ http_interactions:
       encoding: UTF-8
       string: ''
     http_version: 
-  recorded_at: Sat, 08 Feb 2014 15:26:20 GMT
+  recorded_at: Sun, 09 Feb 2014 15:45:07 GMT
 - request:
     method: post
-    uri: unix:///var/run/docker.sock/v1.9/containers/a194549e505bbbd37efe7657d2cf9d0338dc895f7cf6bf9ae38819c7afb49ef2/attach?stderr=true&stdout=true&stream=true
+    uri: unix:///var/run/docker.sock/v1.9/containers/5076d10928d822981775ecd890085e5e2c269b8b399aa8421b94ceb7a08c35af/attach?stderr=true&stdout=true&stream=true
     body:
       encoding: US-ASCII
       string: ''
@@ -195,5 +190,5 @@ http_interactions:
         Cm1udApvcHQKcHJvYwpyb290CnJ1bgpzYmluCnNlbGludXgKc3J2CnN0YWxs
         bWFuCnN5cwp0bXAKdXNyCnZhcgo=
     http_version: 
-  recorded_at: Sat, 08 Feb 2014 15:26:20 GMT
+  recorded_at: Sun, 09 Feb 2014 15:45:07 GMT
 recorded_with: VCR 2.8.0

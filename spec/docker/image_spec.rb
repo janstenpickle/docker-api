@@ -4,11 +4,11 @@ describe Docker::Image do
   describe '#to_s' do
     subject { described_class.new(Docker.connection, id, info) }
 
-    let(:id) { 'bf119e2' }
+    let(:id) { '9cd978db300e' }
     let(:connection) { Docker.connection }
 
     let(:info) do
-      {"Repository" => "base", "Tag" => "latest",
+      {"Repository" => "ubuntu", "Tag" => "latest",
         "Created" => 1364102658, "Size" => 24653, "VirtualSize" => 180116135}
     end
 
@@ -22,7 +22,7 @@ describe Docker::Image do
 
   describe '#remove' do
     let(:id) { subject.id }
-    subject { described_class.create('fromImage' => 'base') }
+    subject { described_class.create('fromImage' => 'ubuntu') }
 
     it 'removes the Image', :vcr do
       subject.remove
@@ -31,7 +31,7 @@ describe Docker::Image do
   end
 
   describe '#insert' do
-    subject { described_class.build('from base') }
+    subject { described_class.build('from ubuntu') }
     let(:new_image) { subject.insert(:path => '/stallman',
                                      :url => 'http://stallman.org') }
     let(:ls_output) { new_image.run('ls /').attach }
@@ -42,7 +42,7 @@ describe Docker::Image do
   end
 
   describe '#insert_local' do
-    subject { described_class.build('from base') }
+    subject { described_class.build('from ubuntu') }
 
     let(:rm) { false }
     let(:new_image) {
@@ -103,7 +103,7 @@ describe Docker::Image do
   end
 
   describe '#push' do
-    subject { described_class.create('fromImage' => 'base') }
+    subject { described_class.create('fromImage' => 'ubuntu') }
     let(:credentials) {
       {
         :username => 'test',
@@ -113,16 +113,16 @@ describe Docker::Image do
       }
     }
     let(:base_image) {
-      described_class.create('fromImage' => 'base')
+      described_class.create('fromImage' => 'ubuntu')
     }
     let(:container) {
       base_image.run('true')
     }
-    let(:repo_name) { 'test/base' }
+    let(:repo_name) { 'test/ubuntu' }
     let(:new_image) {
       container.commit('repo' => repo_name)
       Docker::Image.all.select { |image|
-        image.info['Repository'] == repo_name
+        image.info['RepoTags'].first.include?(repo_name)
       }.first
     }
 
@@ -132,16 +132,16 @@ describe Docker::Image do
   end
 
   describe '#tag' do
-    subject { described_class.create('fromImage' => 'base') }
+    subject { described_class.create('fromImage' => 'ubuntu') }
 
     it 'tags the image with the repo name', :vcr do
-      expect { subject.tag(:repo => 'base2', :force => true) }
+      expect { subject.tag(:repo => 'ubuntu2', :force => true) }
           .to_not raise_error
     end
   end
 
   describe '#json' do
-    subject { described_class.create('fromImage' => 'base') }
+    subject { described_class.create('fromImage' => 'ubuntu') }
     let(:json) { subject.json }
 
     it 'returns additional information about image image', :vcr do
@@ -151,7 +151,7 @@ describe Docker::Image do
   end
 
   describe '#history' do
-    subject { described_class.create('fromImage' => 'base') }
+    subject { described_class.create('fromImage' => 'ubuntu') }
     let(:history) { subject.history }
 
     it 'returns the history of the Image', :vcr do
@@ -162,7 +162,7 @@ describe Docker::Image do
   end
 
   describe '#run' do
-    subject { described_class.create('fromImage' => 'base') }
+    subject { described_class.create('fromImage' => 'ubuntu') }
     let(:output) { subject.run(cmd).attach }
 
     context 'when the argument is a String', :vcr do
@@ -191,8 +191,8 @@ describe Docker::Image do
 
       context "command configured in image" do
         let(:container) {Docker::Container.create('Cmd' => %w[true],
-                                                  'Image' => 'base')}
-        subject { container.commit('run' => {"Cmd" => %w[pwd]}) }
+                                                  'Image' => 'ubuntu')}
+        subject { container.commit('run' => {"Cmd" => %w[/bin/pwd]}) }
         it 'should normally show result if image has Cmd configured' do
           expect(output).to eql [["/\n"],[]]
         end
@@ -204,7 +204,7 @@ describe Docker::Image do
     subject { described_class }
 
     context 'when the Image does not yet exist and the body is a Hash' do
-      let(:image) { subject.create('fromImage' => 'base') }
+      let(:image) { subject.create('fromImage' => 'ubuntu') }
 
       it 'sets the id', :vcr do
         image.should be_a Docker::Image
@@ -218,7 +218,7 @@ describe Docker::Image do
     let(:image) { subject.get(image_name) }
 
     context 'when the image does exist' do
-      let(:image_name) { 'base' }
+      let(:image_name) { 'ubuntu' }
 
       it 'returns the new image', :vcr do
         expect(image).to be_a Docker::Image
@@ -274,7 +274,7 @@ describe Docker::Image do
     subject { described_class }
 
     let(:images) { subject.all(:all => true) }
-    before { subject.create('fromImage' => 'base') }
+    before { subject.create('fromImage' => 'ubuntu') }
 
     it 'materializes each Image into a Docker::Image', :vcr do
       images.each do |image|
@@ -314,7 +314,7 @@ describe Docker::Image do
 
     context 'with a valid Dockerfile' do
       context 'without query parameters' do
-        let(:image) { subject.build("from base\n") }
+        let(:image) { subject.build("from ubuntu\n") }
 
         it 'builds an image', :vcr do
           expect(image).to be_a Docker::Image
@@ -325,7 +325,7 @@ describe Docker::Image do
 
       context 'with specifying a repo in the query parameters' do
         let(:image) {
-          subject.build("from base\nrun true\n", "t" => "swipely/base")
+          subject.build("from ubuntu\nrun true\n", "t" => "swipely/ubuntu")
         }
         let(:images) { subject.all }
 
@@ -333,17 +333,19 @@ describe Docker::Image do
           expect(image).to be_a Docker::Image
           expect(image.id).to_not be_nil
           expect(image.connection).to be_a Docker::Connection
-          expect(images.first.info["Repository"]).to eq("swipely/base")
+          expect(images.first.info["RepoTags"].first).to eq("swipely/ubuntu:latest")
         end
       end
 
       context 'with a block capturing build output' do
         let(:build_output) { "" }
         let(:block) { Proc.new { |chunk| build_output << chunk } }
-        let!(:image) { subject.build("FROM base\n", &block) }
+        let!(:image) { subject.build("from ubuntu\n", &block) }
 
         it 'calls the block and passes build output', :vcr do
-          expect(build_output).to start_with('Step 1 : FROM base')
+          output = []
+          Docker::Util.parse_output(build_output) { | json | output << json }
+          expect(output.first['stream']).to start_with("Step 0 : from ubuntu")
         end
       end
     end
@@ -375,10 +377,10 @@ describe Docker::Image do
       end
 
       context 'with specifying a repo in the query parameters' do
-        let(:opts) { { "t" => "swipely/base2" } }
+        let(:opts) { { "t" => "swipely/ubuntu2" } }
         it 'builds the image and tags it', :vcr do
           expect(output).to eq([[docker_file.read],[]])
-          expect(images.first.info["Repository"]).to eq("swipely/base2")
+          expect(images.first.info["RepoTags"].first).to eq("swipely/ubuntu:latest")
         end
       end
 
@@ -388,7 +390,9 @@ describe Docker::Image do
 
         it 'calls the block and passes build output', :vcr do
           image # Create the image variable, which is lazy-loaded by Rspec
-          expect(build_output['stream']).to start_with("Step 1 : FROM base")
+          output = []
+          Docker::Util.parse_output(build_output) { | json | output << json }
+          expect(output.first['stream']).to start_with("Step 0 : from ubuntu")
         end
       end
     end

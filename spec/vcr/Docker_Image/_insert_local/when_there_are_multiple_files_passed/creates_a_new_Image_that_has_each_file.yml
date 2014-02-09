@@ -8,8 +8,8 @@ http_interactions:
       string: !binary |-
         RG9ja2VyZmlsZQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
         AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-        AAAAAAAAAAAAADAwMDA2NDAAMDAwMDAwMAAwMDAwMDAwADAwMDAwMDAwMDEx
-        ADAwMDAwMDAwMDAwADAxMzIzNQAgMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAADAwMDA2NDAAMDAwMDAwMAAwMDAwMDAwADAwMDAwMDAwMDEz
+        ADEyMjc1NzIxNjUzADAxMzMxMAAgMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
         AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
         AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAB1c3RhcgAwMHdoZWVs
         AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAd2hlZWwAAAAAAAAAAAAAAAAA
@@ -17,7 +17,7 @@ http_interactions:
         AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
         AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
         AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-        AAAAAAAAAAAAAAAAAAAAAABmcm9tIGJhc2UAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAABmcm9tIHVidW50dQAAAAAAAAAAAAAAAAAAAAAA
         AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
         AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
         AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
@@ -65,17 +65,17 @@ http_interactions:
       Content-Type:
       - application/json
       Date:
-      - Sat, 08 Feb 2014 15:26:21 GMT
+      - Sun, 09 Feb 2014 15:50:03 GMT
       Connection:
       - close
       Transfer-Encoding:
       - ''
     body:
       encoding: UTF-8
-      string: '{"stream":"Step 0 : from base\n"}{"stream":" ---\u003e b750fe79269d\n"}{"stream":"Successfully
-        built b750fe79269d\n"}'
+      string: "{\"stream\":\"Step 0 : from ubuntu\\n\"}{\"stream\":\" ---\\u003e 9cd978db300e\\n\"}{\"stream\":\"Successfully
+        built 9cd978db300e\\n\"}"
     http_version: 
-  recorded_at: Sat, 08 Feb 2014 15:26:21 GMT
+  recorded_at: Sun, 09 Feb 2014 15:50:03 GMT
 - request:
     method: post
     uri: unix:///var/run/docker.sock/v1.9/build
@@ -85,7 +85,7 @@ http_interactions:
         R2VtZmlsZQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
         AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
         AAAAAAAAAAAAADAwMDA2NDAAMDAwMDAwMAAwMDAwMDAwADAwMDAwMDAwMDQ2
-        ADAwMDAwMDAwMDAwADAxMjU0NgAgMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        ADEyMjc1NzIxNjUzADAxMjYxNwAgMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
         AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
         AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAB1c3RhcgAwMHdoZWVs
         AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAd2hlZWwAAAAAAAAAAAAAAAAA
@@ -107,8 +107,8 @@ http_interactions:
         AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAFJha2VmaWxlAAAA
         AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
         AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAw
-        MDAwNjQwADAwMDAwMDAAMDAwMDAwMAAwMDAwMDAwMDUxMAAwMDAwMDAwMDAw
-        MAAwMTI3MTQAIDAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        MDAwNjQwADAwMDAwMDAAMDAwMDAwMAAwMDAwMDAwMDUxMAAxMjI3NTcyMTY1
+        MwAwMTI3NjUAIDAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
         AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
         AAAAAAAAAAAAAAAAAAAAAAAAAAAAdXN0YXIAMDB3aGVlbAAAAAAAAAAAAAAA
         AAAAAAAAAAAAAAAAAAAAAHdoZWVsAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
@@ -130,7 +130,7 @@ http_interactions:
         AAAAAAAAAAAAAAAAAAAAAAAAAAAAAABEb2NrZXJmaWxlAAAAAAAAAAAAAAAA
         AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
         AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAMDAwMDY0MAAwMDAw
-        MDAwADAwMDAwMDAAMDAwMDAwMDAwNTcAMDAwMDAwMDAwMDAAMDEzMjQ3ACAw
+        MDAwADAwMDAwMDAAMDAwMDAwMDAwNTcAMTIyNzU3MjE2NTMAMDEzMzIwACAw
         AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
         AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
         AAAAAAAAAAAAAHVzdGFyADAwd2hlZWwAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
@@ -139,7 +139,7 @@ http_interactions:
         AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
         AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
         AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAGZyb20g
-        Yjc1MGZlNzkyNjlkCmFkZCBHZW1maWxlIC8KYWRkIFJha2VmaWxlIC8KAAAA
+        OWNkOTc4ZGIzMDBlCmFkZCBHZW1maWxlIC8KYWRkIFJha2VmaWxlIC8KAAAA
         AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
         AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
         AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
@@ -187,26 +187,25 @@ http_interactions:
       Content-Type:
       - application/json
       Date:
-      - Sat, 08 Feb 2014 15:26:21 GMT
+      - Sun, 09 Feb 2014 15:50:03 GMT
       Connection:
       - close
       Transfer-Encoding:
       - ''
     body:
       encoding: UTF-8
-      string: '{"stream":"Step 0 : from b750fe79269d\n"}{"stream":" ---\u003e b750fe79269d\n"}{"stream":"Step
-        1 : add Gemfile /\n"}{"stream":" ---\u003e Using cache\n"}{"stream":" ---\u003e
-        7449affeb790\n"}{"stream":"Step 2 : add Rakefile /\n"}{"stream":" ---\u003e
-        Using cache\n"}{"stream":" ---\u003e 797746c445fe\n"}{"stream":"Successfully
-        built 797746c445fe\n"}'
+      string: "{\"stream\":\"Step 0 : from 9cd978db300e\\n\"}{\"stream\":\" ---\\u003e
+        9cd978db300e\\n\"}{\"stream\":\"Step 1 : add Gemfile /\\n\"}{\"stream\":\"
+        ---\\u003e 3c89f5940d60\\n\"}{\"stream\":\"Step 2 : add Rakefile /\\n\"}{\"stream\":\"
+        ---\\u003e fe0e4165803a\\n\"}{\"stream\":\"Successfully built fe0e4165803a\\n\"}"
     http_version: 
-  recorded_at: Sat, 08 Feb 2014 15:26:21 GMT
+  recorded_at: Sun, 09 Feb 2014 15:50:04 GMT
 - request:
     method: post
     uri: unix:///var/run/docker.sock/v1.9/containers/create
     body:
       encoding: UTF-8
-      string: '{"Image":"797746c445fe","Cmd":["cat","/Gemfile","/Rakefile"]}'
+      string: "{\"Image\":\"fe0e4165803a\",\"Cmd\":[\"cat\",\"/Gemfile\",\"/Rakefile\"]}"
     headers:
       User-Agent:
       - Swipely/Docker-API 1.7.6
@@ -220,7 +219,7 @@ http_interactions:
       Content-Type:
       - application/json
       Date:
-      - Sat, 08 Feb 2014 15:26:21 GMT
+      - Sun, 09 Feb 2014 15:50:04 GMT
       Content-Length:
       - '90'
       Connection:
@@ -228,15 +227,15 @@ http_interactions:
     body:
       encoding: UTF-8
       string: |
-        {"Id":"be396499379047ad52da8e128083e12c0c83c4cf42c0280b65df8abecdc75f9e","Warnings":null}
+        {"Id":"5d000a6219ad048c1d34581de37d82cf00bc741fd041d25bf1ceb9ca22612290","Warnings":null}
     http_version: 
-  recorded_at: Sat, 08 Feb 2014 15:26:21 GMT
+  recorded_at: Sun, 09 Feb 2014 15:50:04 GMT
 - request:
     method: post
-    uri: unix:///var/run/docker.sock/v1.9/containers/be396499379047ad52da8e128083e12c0c83c4cf42c0280b65df8abecdc75f9e/start
+    uri: unix:///var/run/docker.sock/v1.9/containers/5d000a6219ad048c1d34581de37d82cf00bc741fd041d25bf1ceb9ca22612290/start
     body:
       encoding: UTF-8
-      string: '{}'
+      string: "{}"
     headers:
       User-Agent:
       - Swipely/Docker-API 1.7.6
@@ -248,7 +247,7 @@ http_interactions:
       message: 
     headers:
       Date:
-      - Sat, 08 Feb 2014 15:26:21 GMT
+      - Sun, 09 Feb 2014 15:50:04 GMT
       Content-Length:
       - '0'
       Content-Type:
@@ -259,10 +258,10 @@ http_interactions:
       encoding: UTF-8
       string: ''
     http_version: 
-  recorded_at: Sat, 08 Feb 2014 15:26:21 GMT
+  recorded_at: Sun, 09 Feb 2014 15:50:04 GMT
 - request:
     method: post
-    uri: unix:///var/run/docker.sock/v1.9/containers/be396499379047ad52da8e128083e12c0c83c4cf42c0280b65df8abecdc75f9e/attach?stderr=true&stdout=true&stream=true
+    uri: unix:///var/run/docker.sock/v1.9/containers/5d000a6219ad048c1d34581de37d82cf00bc741fd041d25bf1ceb9ca22612290/attach?stderr=true&stdout=true&stream=true
     body:
       encoding: US-ASCII
       string: ''
@@ -291,5 +290,5 @@ http_interactions:
         bmU6OlJha2VUYXNrLm5ldyg6cXVhbGl0eSkgZG8gfGNhbmV8CiAgY2FuZS5j
         YW5lZmlsZSA9ICcuY2FuZScKZW5kCg==
     http_version: 
-  recorded_at: Sat, 08 Feb 2014 15:26:21 GMT
+  recorded_at: Sun, 09 Feb 2014 15:50:04 GMT
 recorded_with: VCR 2.8.0

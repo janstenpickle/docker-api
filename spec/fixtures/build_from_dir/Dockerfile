@@ -1,2 +1,2 @@
-from base
+from ubuntu
 add / /

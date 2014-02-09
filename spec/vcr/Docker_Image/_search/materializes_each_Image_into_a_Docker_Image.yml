@@ -17,7 +17,7 @@ http_interactions:
       message: 
     headers:
       Date:
-      - Sat, 08 Feb 2014 15:26:42 GMT
+      - Sun, 09 Feb 2014 15:43:09 GMT
       Content-Type:
       - text/plain; charset=utf-8
       Connection:
@@ -32,9 +32,9 @@ http_interactions:
         ,{"description":"Open JDK 7 on Plain Debian with SSHD","is_official":false,"is_trusted":true,"name":"shuron/debian-openjdk-7","star_count":2}
         ,{"description":"","is_official":false,"is_trusted":false,"name":"angelrr7702/ubuntu-13.04-sshd","star_count":1}
         ,{"description":"","is_official":false,"is_trusted":true,"name":"moul/sshd","star_count":1}
-        ,{"description":"This is an image which runs a SSH deamon under supervision of runit.","is_official":false,"is_trusted":false,"name":"skxskx/sshd","star_count":1}
         ,{"description":"Ubuntu 13.10 with openssh based on the stackbrew/ubuntu:13.10 image.","is_official":false,"is_trusted":false,"name":"stephens/sshd","star_count":1}
         ,{"description":"centos with ssh, LAMP, PHPMyAdmin(root password 'toor' and MySQL root password 'sysadmin'). Auto starts sshd, MySQL and Apache. Just launch using 'docker run -d mbkan/lamp'. ","is_official":false,"is_trusted":false,"name":"mbkan/lamp","star_count":1}
+        ,{"description":"This is an image which runs a SSH deamon under supervision of runit.","is_official":false,"is_trusted":false,"name":"skxskx/sshd","star_count":1}
         ,{"description":"","is_official":false,"is_trusted":false,"name":"oss17888/sshd","star_count":0}
         ,{"description":"sshd daemon supervised by DJB daemontools - run cmd :\r\ndocker run -d -p 22 toorop/daemontools-sshd /usr/bin/svscanboot - \r\n\r\nDefault root password : demo - \r\n\r\nSSHD logs location : /var/log/sshd\r\n\r\n","is_official":false,"is_trusted":false,"name":"toorop/daemontools-sshd","star_count":0}
         ,{"description":"","is_official":false,"is_trusted":false,"name":"hyone/sshd","star_count":0}
@@ -42,46 +42,46 @@ http_interactions:
         ,{"description":"","is_official":false,"is_trusted":false,"name":"blissdev/sshd","star_count":0}
         ,{"description":"","is_official":false,"is_trusted":true,"name":"dockeruser/sshd","star_count":0}
         ,{"description":"","is_official":false,"is_trusted":true,"name":"monokrome/sshd","star_count":0}
-        ,{"description":"","is_official":false,"is_trusted":false,"name":"dongweiming/sshd","star_count":0}
         ,{"description":"","is_official":false,"is_trusted":false,"name":"tekknolagi/sshd","star_count":0}
-        ,{"description":"","is_official":false,"is_trusted":false,"name":"cespare/sshd","star_count":0}
+        ,{"description":"","is_official":false,"is_trusted":false,"name":"dongweiming/sshd","star_count":0}
         ,{"description":"","is_official":false,"is_trusted":false,"name":"yestxh/sshd","star_count":0}
+        ,{"description":"","is_official":false,"is_trusted":false,"name":"cespare/sshd","star_count":0}
         ,{"description":"","is_official":false,"is_trusted":false,"name":"emiller/sshd","star_count":0}
-        ,{"description":"","is_official":false,"is_trusted":false,"name":"vgauthier/sshd","star_count":0}
         ,{"description":"","is_official":false,"is_trusted":false,"name":"rblomberg/sshd","star_count":0}
-        ,{"description":"","is_official":false,"is_trusted":false,"name":"yuyat/sshd","star_count":0}
-        ,{"description":"","is_official":false,"is_trusted":false,"name":"jamuc/sshd","star_count":0}
         ,{"description":"","is_official":false,"is_trusted":true,"name":"tiokksar/sshd","star_count":0}
+        ,{"description":"","is_official":false,"is_trusted":false,"name":"jamuc/sshd","star_count":0}
+        ,{"description":"","is_official":false,"is_trusted":false,"name":"jurajpelikan/sshd","star_count":0}
+        ,{"description":"","is_official":false,"is_trusted":false,"name":"yuyat/sshd","star_count":0}
         ,{"description":"sshd daemon \u0026 Nginx supervised by DJB daemontools - run cmd : docker run -d -p 22 -p 80 toorop/daemontools-sshd-nginx /usr/bin/svscanboot - Default root password : demo - SSHD logs location : /var/log/sshd","is_official":false,"is_trusted":false,"name":"toorop/daemontools-sshd-nginx","star_count":0}
         ,{"description":"","is_official":false,"is_trusted":false,"name":"mrtmexx/sshd","star_count":0}
         ,{"description":"","is_official":false,"is_trusted":false,"name":"malbin/sshd","star_count":0}
-        ,{"description":"","is_official":false,"is_trusted":false,"name":"yoshiso/sshd","star_count":0}
-        ,{"description":"","is_official":false,"is_trusted":true,"name":"typester/sshd","star_count":0}
         ,{"description":"","is_official":false,"is_trusted":false,"name":"richburroughs/sshd","star_count":0}
+        ,{"description":"","is_official":false,"is_trusted":true,"name":"typester/sshd","star_count":0}
+        ,{"description":"","is_official":false,"is_trusted":false,"name":"yoshiso/sshd","star_count":0}
         ,{"description":"Ubuntu 12.04\nNodeJS 0.10.18\nsshd","is_official":false,"is_trusted":false,"name":"realyze/ubuntu-node-sshd","star_count":0}
-        ,{"description":"","is_official":false,"is_trusted":false,"name":"jurajpelikan/sshd","star_count":0}
+        ,{"description":"","is_official":false,"is_trusted":false,"name":"vgauthier/sshd","star_count":0}
         ,{"description":"","is_official":false,"is_trusted":false,"name":"dhrp/mongodb-sshd","star_count":0}
-        ,{"description":"","is_official":false,"is_trusted":false,"name":"rayang2004/sshd","star_count":0}
         ,{"description":"","is_official":false,"is_trusted":false,"name":"hyao/sshd","star_count":0}
         ,{"description":"","is_official":false,"is_trusted":false,"name":"ckrintz/sshd","star_count":0}
         ,{"description":"","is_official":false,"is_trusted":false,"name":"steshaw/sshd","star_count":0}
         ,{"description":"Image source was Ubuntu 12.10. Installed openssh-server and reset root password. ","is_official":false,"is_trusted":false,"name":"trebortech/sshd","star_count":0}
         ,{"description":"","is_official":false,"is_trusted":false,"name":"j4pe/sshd","star_count":0}
         ,{"description":"","is_official":false,"is_trusted":false,"name":"dragon9783/sshd","star_count":0}
-        ,{"description":"","is_official":false,"is_trusted":false,"name":"uzero/sshd","star_count":0}
-        ,{"description":"","is_official":false,"is_trusted":false,"name":"colorscode/sshd","star_count":0}
         ,{"description":"","is_official":false,"is_trusted":false,"name":"greut/sshd","star_count":0}
         ,{"description":"","is_official":false,"is_trusted":true,"name":"mogproject/sshd","star_count":0}
+        ,{"description":"","is_official":false,"is_trusted":false,"name":"rayang2004/sshd","star_count":0}
+        ,{"description":"","is_official":false,"is_trusted":false,"name":"uzero/sshd","star_count":0}
+        ,{"description":"","is_official":false,"is_trusted":false,"name":"colorscode/sshd","star_count":0}
         ,{"description":"***WIP***\npassword is H3rpD3rp","is_official":false,"is_trusted":false,"name":"bsdlp/arch-sshd","star_count":0}
         ,{"description":"","is_official":false,"is_trusted":false,"name":"zilin/docker-sshd","star_count":0}
         ,{"description":"","is_official":false,"is_trusted":false,"name":"dhrp/sshd-ping","star_count":0}
         ,{"description":"","is_official":false,"is_trusted":false,"name":"toorop/daemontools-sshd-nginx-php-fpm","star_count":0}
         ,{"description":"Provides access to pharo-core command line interface","is_official":false,"is_trusted":false,"name":"pshouse/sshd-pharo-core","star_count":0}
         ,{"description":"","is_official":false,"is_trusted":false,"name":"dhrp/sshd-ping2","star_count":0}
-        ,{"description":"","is_official":false,"is_trusted":true,"name":"mogproject/sshd-supervisor","star_count":0}
         ,{"description":"","is_official":false,"is_trusted":false,"name":"msinger/openfoam-sshd","star_count":0}
-        ,{"description":"","is_official":false,"is_trusted":false,"name":"lorieri/daemontools-sshd-nginx","star_count":0}
+        ,{"description":"","is_official":false,"is_trusted":true,"name":"mogproject/sshd-supervisor","star_count":0}
         ,{"description":"","is_official":false,"is_trusted":false,"name":"mikewr/u1210-sshd-postgres","star_count":0}
+        ,{"description":"","is_official":false,"is_trusted":false,"name":"lorieri/daemontools-sshd-nginx","star_count":0}
         ,{"description":"","is_official":false,"is_trusted":true,"name":"brandonmartin/docker-ubuntu-runit-sshd","star_count":0}
         ,{"description":"","is_official":false,"is_trusted":false,"name":"emiller/sshdnpw","star_count":0}
         ,{"description":"SSHD daemon supervised by DJB daemontools\nRUN: sudo docker run -d -p 22 -t mfuller/damontools_sshd /usr/bin/svscan /service\nLogin: USER(with sudo)=admin PASSWORD=password\nSSHD logs : /var/log/sshd\n","is_official":false,"is_trusted":false,"name":"mfuller/daemontools_sshd","star_count":0}
@@ -95,6 +95,7 @@ http_interactions:
         ,{"description":"This image contains configured sshd daemon and pre-installed ubuntu's build-essential package, the default root's password is 'passw0rd'.","is_official":false,"is_trusted":false,"name":"parkghost/base","star_count":0}
         ,{"description":"My personal base repo built on the ubuntu base, running sshd under daemontools.","is_official":false,"is_trusted":false,"name":"zakame/base","star_count":0}
         ,{"description":"A container for Go developers - Go 1.1 + Git + sshd - run with \"docker run -d -p 22 -h toorop/golang /usr/bin/svscanboot\"  - connect throw SSH  \"ssh root@localhost -pSSHD_PORT\" default password is \"demo\" - add users : \"adduser USERNAME\" this will also configure USER $HOME directory - Start coding. Enjoy ;)","is_official":false,"is_trusted":false,"name":"toorop/golang","star_count":0}
+        ,{"description":"Saltstack Salt Master Image, runs sshd and salt-master via supervisor, exposes 22, 4505 and 4506. Needs configuration files for the master fed in through volumes mounted to/srv and /etc/salt.","is_official":false,"is_trusted":false,"name":"sroegner/saltmaster","star_count":0}
         ,{"description":"Base + sshd + proxy + static ip addr.","is_official":false,"is_trusted":false,"name":"simoman/sshd","star_count":0}
         ,{"description":"Centos 6.4 (64bit) with sshd","is_official":false,"is_trusted":false,"name":"jonhadfield/sshd","star_count":0}
         ,{"description":"Runs a SSHd server in daemon mode","is_official":false,"is_trusted":false,"name":"zefhemel/sshd","star_count":0}
@@ -105,5 +106,5 @@ http_interactions:
         ,{"description":"","is_official":false,"is_trusted":false,"name":"johnfuller/sshd","star_count":0}
         ]
     http_version: 
-  recorded_at: Sat, 08 Feb 2014 15:26:42 GMT
+  recorded_at: Sun, 09 Feb 2014 15:43:09 GMT
 recorded_with: VCR 2.8.0
